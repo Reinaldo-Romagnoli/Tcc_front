@@ -11,7 +11,7 @@ import * as Animatable from 'react-native-animatable';
 
 import { useNavigation } from '@react-navigation/native';
 
-export default function Register(){
+export default function ResetPassword(){
     const navigation = useNavigation();
 
     return(
@@ -27,39 +27,28 @@ export default function Register(){
         </View>
 
             <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}>
-                <Text style={styles.message}>Cadastrar-se</Text>
+                <Text style={styles.message}>Esqueceu a senha</Text>
             </Animatable.View>
 
             <Animatable.View animation="fadeInUp" style={styles.containerForm}>
-                <Text style={styles.title}>Email</Text>
+                <Text style={styles.title}>Insira seu email ou número de celular para procurar a sua conta.</Text>
                 <TextInput
-                    placeholder="Digite um email"
-                    style={styles.input}
-                />
-
-                <Text style={styles.title}>Celular</Text>
-                <TextInput
-                    placeholder="Digite o numero celular"
-                    style={styles.input}
-                />
-
-                <Text style={styles.title}>Senha</Text>
-                <TextInput
-                    placeholder="Digite sua senha"
-                    style={styles.input}
-                />
-
-                <Text style={styles.title}>Repita a Senha</Text>
-                <TextInput
-                    placeholder="Digite sua senha novamente"
+                    placeholder="Email ou numero de celular"
                     style={styles.input}
                 />
 
                 <TouchableOpacity 
                 style={styles.button}
+                onPress={ () => navigation.navigate('ResetPt2')}
+                >
+                    <Text style={styles.buttonText}>Continuar</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity 
+                style={styles.buttonCancel}
                 onPress={ () => navigation.navigate('SignIn')}
                 >
-                    <Text style={styles.buttonText}>Cadastrar</Text>
+                    <Text style={styles.cancelText}>Cancelar</Text>
                 </TouchableOpacity>
 
             </Animatable.View>
@@ -87,8 +76,8 @@ const styles = StyleSheet.create({
         paddingEnd: '5%'
     },
     title:{
-        fontSize: 15,
-        marginTop: 20,
+        fontSize: 20,
+        marginTop: 28,
     },
     input:{
         borderBottomWidth: 1,
@@ -107,6 +96,20 @@ const styles = StyleSheet.create({
     },
     buttonText:{
         color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold'
+    },
+    buttonCancel:{
+        backgroundColor: '#c1c7c5',
+        width: '100%',
+        borderRadius: 6,
+        paddingVertical: 8,
+        marginTop: 14,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    cancelText:{
+        color: '#6b706e',
         fontSize: 18,
         fontWeight: 'bold'
     }

@@ -54,7 +54,10 @@ export default function SignIn(){
                     <Text style={styles.registerText}>Cadastrar-se</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonRemember}>
+                <TouchableOpacity 
+                style={styles.buttonRemember}
+                onPress={ () => navigation.navigate('ResetPassword')}
+                >
                     <Text style={styles.rememberText}>Esqueceu a senha?</Text>
                 </TouchableOpacity>
             </Animatable.View>
@@ -65,7 +68,7 @@ export default function SignIn(){
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor: '#ffff'
+        backgroundColor: '#ffff',
     },
     containerHeader:{
         marginTop: '1%',
@@ -108,6 +111,9 @@ const styles = StyleSheet.create({
     buttonRemember: {
         marginTop: 14,
         alignSelf: 'center',
+    },
+    rememberText:{
+        color: '#2893d1'
     },
     buttonRegister:{
         width: '60%',
