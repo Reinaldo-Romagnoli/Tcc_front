@@ -4,6 +4,8 @@ import {
     Text,
     StyleSheet,
     TextInput,
+    KeyboardAvoidingView,
+    Platform,
     TouchableOpacity
 } from "react-native";
 
@@ -15,7 +17,10 @@ export default function SignIn(){
     const navigation = useNavigation();
 
     return(
-        <View style={styles.container}>
+        <KeyboardAvoidingView 
+        behavior={Platform.OS == "ios" ? "padding" : "height"}
+        style={styles.container}
+        keyboardVerticalOffset={80}>
 
         <View style={styles.containerLogo}>
             <Animatable.Image
@@ -43,7 +48,9 @@ export default function SignIn(){
                     style={styles.input}
                 />
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity 
+                style={styles.button}
+                onPress={ () => navigation.navigate('Students')}>
                     <Text style={styles.buttonText}>Acessar</Text>
                 </TouchableOpacity>
 
@@ -61,7 +68,8 @@ export default function SignIn(){
                     <Text style={styles.rememberText}>Esqueceu a senha?</Text>
                 </TouchableOpacity>
             </Animatable.View>
-        </View>
+
+        </KeyboardAvoidingView>
     )
 }
 

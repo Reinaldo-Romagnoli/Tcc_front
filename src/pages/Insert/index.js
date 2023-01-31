@@ -14,7 +14,7 @@ import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from "react-native-gesture-handler";
 
-export default function Register(){
+export default function Insert(){
     const navigation = useNavigation();
 
     return(
@@ -34,39 +34,34 @@ export default function Register(){
             </View>
 
                 <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}>
-                    <Text style={styles.message}>Cadastrar-se</Text>
+                    <Text style={styles.message}>Adicionar Alunos</Text>
                 </Animatable.View>
 
                 <Animatable.View animation="fadeInUp" style={styles.containerForm}>
-                    <Text style={styles.title}>Email</Text>
+                    <Text style={styles.title}>CGM</Text>
                     <TextInput
-                        placeholder="Digite um email"
+                        placeholder="Digite o CGM do aluno..."
                         style={styles.input}
                     />
 
-                    <Text style={styles.title}>Celular</Text>
+                    <Text style={styles.title}>Nome do Responsavel</Text>
                     <TextInput
-                        placeholder="Digite o numero celular"
-                        style={styles.input}
-                    />
-
-                    <Text style={styles.title}>Senha</Text>
-                    <TextInput
-                        placeholder="Digite sua senha"
-                        style={styles.input}
-                    />
-
-                    <Text style={styles.title}>Repita a Senha</Text>
-                    <TextInput
-                        placeholder="Digite sua senha novamente"
+                        placeholder="Digite o nome do Responsavel"
                         style={styles.input}
                     />
 
                     <TouchableOpacity 
                     style={styles.button}
-                    onPress={ () => navigation.navigate('SignIn')}
+                    onPress={ () => navigation.navigate('Students')}
                     >
-                        <Text style={styles.buttonText}>Cadastrar</Text>
+                        <Text style={styles.buttonText}>Adicionar Aluno</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                    style={styles.button2}
+                    onPress={ () => navigation.navigate('Students')}
+                    >
+                        <Text style={styles.buttonText}>Voltar</Text>
                     </TouchableOpacity>
 
                 </Animatable.View>
@@ -106,6 +101,15 @@ const styles = StyleSheet.create({
     },
     button:{
         backgroundColor: '#118AB2',
+        width: '100%',
+        borderRadius: 6,
+        paddingVertical: 8,
+        marginTop: 14,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    button2:{
+        backgroundColor: '#c2c2c2',
         width: '100%',
         borderRadius: 6,
         paddingVertical: 8,
