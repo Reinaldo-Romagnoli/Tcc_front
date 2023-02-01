@@ -15,25 +15,10 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from "react-native-gesture-handler";
-import { BarChart } from 'react-native-chart-kit';
 
 
 export default function Absences(){
     const navigation = useNavigation();
-
-    const data = {
-      labels: ['Presenças', 'Faltas'],
-      datasets: [
-        {
-          data: [50, 50],
-          color: (opacity = 1) => `rgba(63, 81, 181, ${opacity})`,
-        },
-        {
-          data: [50, 50],
-          color: (opacity = 1) => `rgba(244, 67, 54, ${opacity})`,
-        },
-      ],
-    };
 
     const [portuguesExpanded, setPortuguesExpanded] = useState(false);
       const [matematicaExpanded, setMatematicaExpanded] = useState(false);
@@ -49,24 +34,6 @@ export default function Absences(){
         <ScrollView>
                 <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}>
                     <Text style={styles.message}>Faltas</Text>
-                    <BarChart
-                      style={{ height: 200 }}
-                      data={data}
-                      width={screenWidth}
-                      height={220}
-                      yAxisLabel="Quantidade"
-                      chartConfig={{
-                        backgroundColor: '#1cc910',
-                        backgroundGradientFrom: '#eff3ff',
-                        backgroundGradientTo: '#efefef',
-                        decimalPlaces: 2,
-                        color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-                        style: {
-                          borderRadius: 16,
-                        },
-                      }}
-                      verticalLabelRotation={30}
-                    />
                 </Animatable.View>
 
                 <Animatable.View animation="fadeInUp" style={styles.containerForm}>
@@ -79,7 +46,8 @@ export default function Absences(){
                   </TouchableOpacity>
                   {portuguesExpanded  && (
                     <View>
-                      <Text style={styles.card2}>1°Bimestre:  9.2</Text>
+                      <Text style={styles.card2}>Faltas:  18</Text>
+                      <Text style={styles.card2}>Presenças:  50</Text>
                     </View>
                   )}
                   </View>
@@ -92,7 +60,8 @@ export default function Absences(){
                   </TouchableOpacity>
                   {matematicaExpanded && (
                     <View>
-                      <Text style={styles.card2}>1°Bimestre:  9.2</Text>
+                      <Text style={styles.card2}>Faltas:  18</Text>
+                      <Text style={styles.card2}>Presenças:  50</Text>
                     </View>
                   )}
                   </View>
@@ -105,7 +74,8 @@ export default function Absences(){
                   </TouchableOpacity>
                   {historyExpanded && (
                     <View>
-                      <Text style={styles.card2}>1°Bimestre:  9.2</Text>
+                      <Text style={styles.card2}>Faltas:  18</Text>
+                      <Text style={styles.card2}>Presenças:  50</Text>
                     </View>
                   )}
                   </View>
@@ -118,7 +88,8 @@ export default function Absences(){
                   </TouchableOpacity>
                   {artExpanded && (
                     <View>
-                      <Text style={styles.card2}>1°Bimestre:  9.2</Text>
+                      <Text style={styles.card2}>Faltas:  18</Text>
+                      <Text style={styles.card2}>Presenças:  50</Text>
                     </View>
                   )}
                   </View>
@@ -131,7 +102,8 @@ export default function Absences(){
                   </TouchableOpacity>
                   {physical_educationExpanded && (
                     <View>
-                      <Text style={styles.card2}>1°Bimestre:  9.2</Text>
+                      <Text style={styles.card2}>Faltas:  18</Text>
+                      <Text style={styles.card2}>Presenças:  50</Text>
                     </View>
                     
                   )}
