@@ -9,6 +9,7 @@ import ResetPt2 from '../pages/ResetPt2';
 import Insert from '../pages/Insert';
 import Notes from '../pages/Notes';
 import Absences from '../pages/Absences';
+import Activities from '../pages/Activities';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,8 +58,12 @@ export default function Routes(){
                 component={Absences}
                 options={{ headerShown: false }}
             />
+            <Stack.Screen
+                name="Activities"
+                component={Activities}
+                options={{ headerShown: false }}
+            />
+            
         </Stack.Navigator>
-        
-        
     )
 }

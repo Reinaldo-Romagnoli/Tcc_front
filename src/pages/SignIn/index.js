@@ -44,6 +44,7 @@ export default function SignIn(){
 
                 <Text style={styles.title}>Senha</Text>
                 <TextInput
+                    secureTextEntry={true}
                     placeholder="Digite sua senha"
                     style={styles.input}
                 />

@@ -130,10 +130,10 @@ export default function Absences(){
 
                 <TouchableOpacity 
                 style={styles.button}
-                onPress={ () => navigation.navigate('Absences')}
+                onPress={ () => navigation.navigate('Activities')}
                 >
-                  <Icon2 name="clipboard-check-outline" size={25} color="#ffff" />
-                  <Text style={styles.buttonText}>Faltas</Text>
+                      <Icon2 name="book-education" size={25} color="#ffff" />
+                      <Text style={styles.buttonText}>Atividades</Text>
                 </TouchableOpacity>
               </View>
         </KeyboardAvoidingView>

@@ -54,12 +54,14 @@ export default function Register(){
                     <TextInput
                         placeholder="Digite sua senha"
                         style={styles.input}
+                        secureTextEntry={true}
                     />
 
                     <Text style={styles.title}>Repita a Senha</Text>
                     <TextInput
                         placeholder="Digite sua senha novamente"
                         style={styles.input}
+                        secureTextEntry={true}
                     />
 
                     <TouchableOpacity 
@@ -67,6 +69,13 @@ export default function Register(){
                     onPress={ () => navigation.navigate('SignIn')}
                     >
                         <Text style={styles.buttonText}>Cadastrar</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                    style={styles.button2}
+                    onPress={ () => navigation.navigate('SignIn')}
+                    >
+                        <Text style={styles.buttonText}>Cancelar</Text>
                     </TouchableOpacity>
 
                 </Animatable.View>
@@ -106,6 +115,20 @@ const styles = StyleSheet.create({
     },
     button:{
         backgroundColor: '#118AB2',
+        width: '100%',
+        borderRadius: 6,
+        paddingVertical: 8,
+        marginTop: 14,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    buttonText:{
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold'
+    },
+    button2:{
+        backgroundColor: '#c2c2c2',
         width: '100%',
         borderRadius: 6,
         paddingVertical: 8,
